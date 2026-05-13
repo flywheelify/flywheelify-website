@@ -41,9 +41,9 @@ export default function FounderProblem() {
             maxWidth: '720px',
           }}
         >
-          You've built something real.{' '}
+          You&apos;ve built something real.{' '}
           <em style={{ fontStyle: 'italic', color: 'var(--evergreen)' }}>
-            But you're still trapped inside the business.
+            But you&apos;re still trapped inside the business.
           </em>
         </motion.h2>
 
@@ -71,8 +71,9 @@ export default function FounderProblem() {
           {pains.map((pain, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+              initial={{ opacity: 0, y: 24, scale: 0.97 }}
+              animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              whileHover={{ y: -3, boxShadow: '0 8px 32px rgba(31,77,58,0.1)' }}
               transition={{ delay: 0.2 + i * 0.08, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               style={{
                 background: 'var(--sand)',
@@ -82,6 +83,8 @@ export default function FounderProblem() {
                 alignItems: 'flex-start',
                 gap: '16px',
                 boxShadow: '0 2px 16px rgba(31,77,58,0.06)',
+                borderLeft: '3px solid var(--teal)',
+                cursor: 'default',
               }}
             >
               <span style={{

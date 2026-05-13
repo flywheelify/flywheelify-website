@@ -46,8 +46,8 @@ export default function ApplyEmbed() {
             margin: '0 auto',
             opacity: 0.85,
           }}>
-            Tell us a bit about your business and where you're at.
-            Takes 3 minutes — and you'll be taken straight to booking after.
+            Tell us a bit about your business and where you&apos;re at.
+            Takes 3 minutes — and you&apos;ll be taken straight to booking after.
           </p>
         </motion.div>
 

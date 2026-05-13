@@ -85,7 +85,7 @@ export default function FinalCTA() {
             margin: '0 auto 48px',
           }}
         >
-          Freedom, impact, and growth aren't in conflict. They're the result of
+          Freedom, impact, and growth aren&apos;t in conflict. They&apos;re the result of
           building the right foundation. Start with a conversation.
         </motion.p>
 
@@ -112,7 +112,7 @@ export default function FinalCTA() {
               (e.currentTarget as HTMLElement).style.color = 'var(--forest)';
             }}
           >
-            Book a Founder Business Audit
+            Book Your Founder Business Audit
           </a>
           <p style={{
             marginTop: '16px',

@@ -10,7 +10,6 @@ const links = [
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -20,7 +19,6 @@ export default function Nav() {
 
   const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    setMenuOpen(false);
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
@@ -112,7 +110,7 @@ export default function Nav() {
         className="btn-primary"
         style={{ fontSize: '14px', padding: '11px 26px' }}
       >
-        Book a Free Audit
+        Book Your Founder Business Audit
       </a>
     </nav>
   );

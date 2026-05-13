@@ -1,6 +1,7 @@
 'use client';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 export default function Solution() {
   const ref = useRef(null);
@@ -46,12 +47,14 @@ export default function Solution() {
             overflow: 'hidden',
             aspectRatio: '1/1',
             boxShadow: '0 20px 72px rgba(31,77,58,0.16)',
+            position: 'relative',
           }}
         >
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=85&fit=crop"
             alt="Clear open workspace — calm and structured"
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            fill
+            style={{ objectFit: 'cover' }}
           />
         </motion.div>
 
@@ -89,7 +92,7 @@ export default function Solution() {
             transition={{ delay: 0.28, duration: 0.6 }}
             style={{ fontSize: '18px', lineHeight: 1.75, color: 'var(--deep-ocean)', marginBottom: '40px' }}
           >
-            We don't hand you a playbook and walk away. We build with you — systems,
+            We don&apos;t hand you a playbook and walk away. We build with you — systems,
             workflows, automation, reporting, and the team infrastructure that lets the
             business grow beyond you.
           </motion.p>
@@ -99,7 +102,7 @@ export default function Solution() {
             transition={{ delay: 0.36, duration: 0.6 }}
           >
             <a href="#apply" className="btn-primary">
-              Book a Founder Business Audit
+              Book Your Founder Business Audit
             </a>
           </motion.div>
         </div>

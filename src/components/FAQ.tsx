@@ -39,6 +39,10 @@ const faqs = [
     q: 'What if I don\'t have a team yet?',
     a: 'We still work with you. Foundations matter whether you have 2 people or 20. In fact, building the systems before the team often saves a significant amount of pain when you do start hiring.',
   },
+  {
+    q: 'What does the audit actually cover?',
+    a: 'We map your full operational picture — where decisions get made, where your team bottlenecks, what your pipeline looks like, what\'s automated vs. manual, and where the biggest leverage points are. You leave with a clear picture of what\'s holding your business back and a prioritized path forward.',
+  },
 ];
 
 function FAQItem({ q, a }: { q: string; a: string }) {

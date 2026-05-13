@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -28,27 +29,49 @@ export default function Hero() {
       overflow: 'hidden',
       textAlign: 'center',
     }}>
-      {/* Soft background blobs */}
-      <div style={{
-        position: 'absolute',
-        top: '-200px',
-        right: '-200px',
-        width: '800px',
-        height: '800px',
-        borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(47,104,79,0.06) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute',
-        bottom: '-150px',
-        left: '-150px',
-        width: '600px',
-        height: '600px',
-        borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(47,164,169,0.05) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
+      {/* Animated background blobs */}
+      <motion.div
+        animate={{ y: [0, -28, 0], scale: [1, 1.04, 1] }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+        style={{
+          position: 'absolute',
+          top: '-200px',
+          right: '-200px',
+          width: '800px',
+          height: '800px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(47,104,79,0.09) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }}
+      />
+      <motion.div
+        animate={{ y: [0, 24, 0], scale: [1, 1.06, 1] }}
+        transition={{ duration: 13, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        style={{
+          position: 'absolute',
+          bottom: '-150px',
+          left: '-150px',
+          width: '600px',
+          height: '600px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(47,164,169,0.08) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }}
+      />
+      <motion.div
+        animate={{ y: [0, -16, 0], x: [0, 12, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+        style={{
+          position: 'absolute',
+          top: '40%',
+          left: '-100px',
+          width: '400px',
+          height: '400px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(171,195,160,0.07) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }}
+      />
 
       <div style={{ maxWidth: '860px', width: '100%', position: 'relative' }}>
 
@@ -68,13 +91,18 @@ export default function Hero() {
             color: 'var(--forest)',
             letterSpacing: '0.01em',
           }}>
-            <span style={{
-              width: '6px',
-              height: '6px',
-              borderRadius: '50%',
-              background: 'var(--teal)',
-              flexShrink: 0,
-            }} />
+            <motion.span
+              animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
+              transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+              style={{
+                width: '6px',
+                height: '6px',
+                borderRadius: '50%',
+                background: 'var(--teal)',
+                flexShrink: 0,
+                display: 'block',
+              }}
+            />
             For founders doing $10K/month to $3M+/year
           </span>
         </motion.div>
@@ -105,7 +133,6 @@ export default function Hero() {
             fontSize: 'clamp(17px, 2vw, 21px)',
             color: 'var(--deep-ocean)',
             lineHeight: 1.72,
-            marginBottom: '52px',
             maxWidth: '680px',
             margin: '0 auto 52px',
             opacity: 0.85,
@@ -134,17 +161,12 @@ export default function Hero() {
             boxShadow: '0 20px 80px rgba(31,77,58,0.2)',
             cursor: 'pointer',
           }}>
-            {/* Background nature image */}
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=85&fit=crop"
               alt="Video background"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                display: 'block',
-                opacity: 0.65,
-              }}
+              fill
+              style={{ objectFit: 'cover', opacity: 0.65 }}
+              priority
             />
             {/* Overlay */}
             <div style={{
@@ -162,26 +184,27 @@ export default function Hero() {
               justifyContent: 'center',
               gap: '16px',
             }}>
-              <div style={{
-                width: '72px',
-                height: '72px',
-                borderRadius: '50%',
-                background: 'rgba(250,248,244,0.15)',
-                border: '2px solid rgba(250,248,244,0.4)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backdropFilter: 'blur(8px)',
-                transition: 'background 0.25s ease, transform 0.25s ease',
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.background = 'rgba(250,248,244,0.28)';
-                (e.currentTarget as HTMLElement).style.transform = 'scale(1.08)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.background = 'rgba(250,248,244,0.15)';
-                (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
-              }}
+              <div
+                style={{
+                  width: '72px',
+                  height: '72px',
+                  borderRadius: '50%',
+                  background: 'rgba(250,248,244,0.15)',
+                  border: '2px solid rgba(250,248,244,0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backdropFilter: 'blur(8px)',
+                  transition: 'background 0.25s ease, transform 0.25s ease',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.background = 'rgba(250,248,244,0.28)';
+                  (e.currentTarget as HTMLElement).style.transform = 'scale(1.08)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.background = 'rgba(250,248,244,0.15)';
+                  (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
+                }}
               >
                 <svg width="22" height="26" viewBox="0 0 22 26" fill="none" style={{ marginLeft: '4px' }}>
                   <path d="M2 2L20 13L2 24V2Z" fill="rgba(250,248,244,0.95)" stroke="none" />
@@ -211,7 +234,7 @@ export default function Hero() {
             }}
             style={{ fontSize: '17px', padding: '18px 52px' }}
           >
-            Book a Founder Business Audit
+            Book Your Founder Business Audit
           </a>
           <span style={{
             fontFamily: "'Inter', sans-serif",
