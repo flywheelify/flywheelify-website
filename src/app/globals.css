@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --forest: #1F4D3A;
+  --evergreen: #2F684F;
+  --sage: #ABC3A0;
+  --teal: #2FA4A9;
+  --deep-ocean: #1C3D5A;
+  --cream: #FAF8F4;
+  --sand: #F4F1EA;
+  --beige: #E8E2D8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  color: var(--deep-ocean);
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--forest);
+}
+
+h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  color: var(--deep-ocean);
+}
+
+.font-script {
+  font-family: 'Great Vibes', cursive;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--forest);
+  color: var(--cream);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  padding: 16px 40px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background-color: var(--evergreen);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(31, 77, 58, 0.25);
+}
+
+.section-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.soft-shadow {
+  box-shadow: 0 4px 24px rgba(31, 77, 58, 0.08), 0 1px 4px rgba(31, 77, 58, 0.04);
+}
+
+.soft-shadow-lg {
+  box-shadow: 0 8px 48px rgba(31, 77, 58, 0.12), 0 2px 8px rgba(31, 77, 58, 0.06);
 }
